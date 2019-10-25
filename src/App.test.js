@@ -1,23 +1,13 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
-
+import  { shallow } from 'enzyme';
+// don't need brackets around it as Footer is the default thing.
+import  Footer  from './Footer';
 import App from './App';
 
-Enzyme.configure({adapter: new EnzymeAdapter()});
+it('should render customer service phone number', () => {
+    const wrapper = shallow(<Footer />);
+    const span = wrapper.find('span');
+    const result = span.text();
 
-test('renders without error', () =>{
-
-});
-test('renders increment button', () =>{
-
-});
-test('renders counter display', () =>{
-
-});
-test('counter starts at 0', () =>{
-
-});
-test('clicking button increments counter display', () =>{
-
-});
+    expect(result).toBe('Customer Service: 1-800-555-444');
+})

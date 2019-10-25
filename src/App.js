@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div data-test = "">
-        
-      </div>
-    )
-  }
+import Ticket from './Ticket';
+import Footer from './Footer';
+
+export default function App() {
+  return (
+    <div className='App'>
+      <Ticket name={'Super Bowl Tickets'} />
+      <Footer />
+    </div>
+  );
 }
